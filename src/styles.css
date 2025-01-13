@@ -1,1 +1,61 @@
 /* You can add global styles to this file, and also import other style files */
+/* Establece el esquema de colores para el modo nocturno */
+body {
+    background-color: #121212; /* Fondo oscuro */
+    color: #e0e0e0; /* Texto claro */
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Estilo para los botones en modo nocturno */
+  .styled-button {
+    background-color: #333333; /* Fondo oscuro para botones */
+    color: white; /* Texto blanco */
+    border: none;
+    padding: 15px;
+    border-radius: 8px;
+    width: 100%;
+    transition: background-color 0.3s ease;
+  }
+  
+  .styled-button:hover {
+    background-color: #555555; /* Fondo más claro al pasar el mouse */
+  }
+  
+  .styled-button:active {
+    background-color: #777777; /* Fondo aún más claro al hacer clic */
+  }
+  
+  /* Estilo para los encabezados en modo nocturno */
+  h1 {
+    color: #ffffff; /* Texto claro para encabezados */
+  }
+  
+
+body {
+    background-color: #ffffff;
+    color: #000000;
+  }
+  
+  
+  body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+  }
+  
+  body.dark-mode .styled-button {
+    background-color: #333333;
+    color: white;
+  }
+  
+  body.dark-mode .styled-button:hover {
+    background-color: #555555;
+  }
+  
+  body.dark-mode .styled-button:active {
+    background-color: #777777;
+  }
+  
+  body.dark-mode h1 {
+    color: #ffffff;
+  }
+  

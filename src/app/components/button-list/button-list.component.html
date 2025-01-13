@@ -1,0 +1,10 @@
+<div class="container">
+    <h1>CMC</h1>
+    <div class="button-container">
+        <button *ngFor="let button of buttons" class="styled-button" (click)="openModal(button)">
+            {{ button }}
+        </button>
+    </div>
+</div>
+
+<app-card-detail-modal *ngIf="isModalVisible" (close)="closeModal()" [cmc]="selectedButton" ></app-card-detail-modal>

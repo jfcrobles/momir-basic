@@ -1,0 +1,29 @@
+<div class="modal-overlay">
+    <div class="modal-container">
+        <button class="close-button" (click)="closeModal()">X</button>
+        <div class="modal-content">
+            <div *ngIf="loading" class="loading-indicator">
+                <p>Loading...</p>
+            </div>
+            <!-- Imagen -->
+            <div class="modal-image" *ngIf="!loading && cardDetails">
+                <img [src]="cardDetails?.image_uris?.normal" alt="{{ cardDetails?.name }}" />
+            </div>
+            <!-- Texto -->
+            <div class="modal-text" *ngIf="!loading && cardDetails">
+                <h2>{{ cardDetails?.name }}</h2>
+                <p><strong>Type:</strong> {{ cardDetails?.type_line }}</p>
+                <p><strong>Mana Cost:</strong> {{ cardDetails?.mana_cost }}</p>
+                <p><strong>Oracle Text:</strong> {{ cardDetails?.oracle_text }}</p>
+                <p><strong>Power:</strong> {{ cardDetails?.power }}</p>
+                <p><strong>Toughness:</strong> {{ cardDetails?.toughness }}</p>
+
+                <button class="print-button" (click)="printCardDetails(cardDetails)" *ngIf="printerStateService.canPrint()"> <i class="fas fa-print"></i></button>
+            </div>
+
+            <div *ngIf="!loading && !cardDetails" class="error-message">
+                <p>Error al obtener los detalles de la carta.</p>
+            </div>
+        </div>
+    </div>
+</div>

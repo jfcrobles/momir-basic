@@ -1,0 +1,29 @@
+<div class="modal-overlay">
+  <div class="modal-container">
+    <button class="close-button" (click)="close.emit()">X</button>
+    <div class="modal-header">
+      <h2>Config <i class="fa fa-cogs"></i></h2>
+      <div class="options">
+        <div class="dropdown">
+          <label for="language">Card Lang: </label>
+          <div class="dropdown-container">
+            <div class="selected-language" (click)="isDropdownOpen = !isDropdownOpen">
+              <img [src]="selectedLanguage.flag" alt="{{ selectedLanguage.name }}" class="flag-icon" />
+              {{ selectedLanguage.name }}
+            </div>
+            <ul *ngIf="isDropdownOpen" class="dropdown-list">
+              <li *ngFor="let language of languages" (click)="selectedLanguage = language">
+                <img [src]="language.flag" alt="{{ language.name }}" class="flag-icon" />
+                {{ language.code }}
+              </li>
+            </ul>
+          </div>
+        </div>
+        <button [disabled]="printerStateService.canPrint()" class="add-printer-btn" (click)="addPrinter()">Add Printer</button>
+      </div>
+    </div>
+    <div class="modal-content">
+      
+    </div>
+  </div>
+</div>

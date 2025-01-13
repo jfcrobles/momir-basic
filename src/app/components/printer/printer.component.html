@@ -1,0 +1,6 @@
+
+<div class="container">
+    <h1>Bluetooth Printer App</h1>
+    <button (click)="connectToPrinter()">Conectar a impresora</button>
+    <button (click)="printRandomCard()" [disabled]="!printerStateService.canPrint()">Imprimir texto</button>
+</div>

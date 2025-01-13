@@ -1,0 +1,131 @@
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .modal-container {
+    background: #222;
+    color: #fff;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 600px;
+    max-height: 90%; /* Limitar la altura máxima al 90% de la pantalla */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto; /* Habilitar scroll vertical si el contenido excede la altura */
+  }
+  
+  .close-button {
+    background: transparent; /* Elimina el fondo de color */
+    border: none; /* Sin borde */
+    color: #fff; /* El color de la "X" puede ser negro o cualquier color que desees */
+    font-size: 24px; /* Aumentamos el tamaño de la "X" */
+    font-weight: bold; /* Hace que la "X" sea más visible */
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    cursor: pointer;
+  }
+  
+  .close-button:hover {
+    background: transparent; /* Asegúrate de que no haya fondo al pasar el mouse */
+    color: #ff5e57; /* Cambiar el color de la "X" al pasar el mouse (puedes ajustarlo) */
+  }
+  .modal-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    align-items: center;
+  }
+  
+  .modal-image img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  }
+  
+  .modal-text {
+    text-align: left;
+  }
+  
+  .modal-text h2 {
+    margin: 0 0 10px;
+    font-size: 24px;
+  }
+  
+  .modal-text p {
+    margin: 5px 0;
+  }
+
+  .loading-indicator {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    font-size: 18px;
+    color: #777;
+  }
+    
+  .error-message {
+    color: red;
+    font-size: 16px;
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  /* Estilo responsivo */
+  @media (max-width: 768px) {
+    .modal-content {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  .print-button {
+    background-color: #28a745; /* Verde para el botón activo */
+    color: #ffffff; /* Texto blanco */
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    margin-top: 15px;
+  }
+  
+  .print-button:hover {
+    background-color: #218838; /* Más oscuro al pasar el mouse */
+    transform: scale(1.05); /* Leve aumento de tamaño */
+  }
+  
+  .print-button:active {
+    background-color: #1e7e34; /* Color más oscuro al hacer clic */
+    transform: scale(0.98); /* Leve reducción de tamaño para el efecto de clic */
+  }
+  
+  .print-button:disabled {
+    background-color: #cccccc; /* Gris para el estado deshabilitado */
+    color: #888888;
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+  }
+  
+  .print-button:disabled:hover {
+    background-color: #cccccc; /* Sin cambios al pasar el mouse si está deshabilitado */
+  }
+  
