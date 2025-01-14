@@ -50,7 +50,6 @@ export class CardDetailModalComponent {
   async printCardDetails(cardJson: any): Promise<void> {
     try {
       console.log('Entra a printCardDetail');
-      // Extraer los campos requeridos
       const name = cardJson.name;
       const cmc = cardJson.cmc;
       const manaCost = cardJson.mana_cost;
@@ -59,11 +58,12 @@ export class CardDetailModalComponent {
       const toughness = cardJson.toughness;
       const type_line = cardJson.type_line;
 
-      // Formatear el texto con el mana_cost al lado del name si cabe en la línea
        const text = `${name} ${manaCost}\n\n${type_line.replace(/—/g, '-')}\n\n${oracleText.replace(/—/g, '-')}\n\n${power}/${toughness}\n`;
 
-      // Llamar a la función printText que ya tienes para imprimir el texto
-      await this.printerService.printText(text);
+      await this.printerService.printText(`${name} ${manaCost}\n\n`);      
+      await this.printerService.printText(`${type_line.replace(/—/g, '-')}\n\n`);      
+      await this.printerService.printText(`${oracleText.replace(/—/g, '-')}\n\n`);      
+      await this.printerService.printText(`${power}/${toughness}\n\n\n\n`);
 
       this.closeModal();
     } catch (error) {

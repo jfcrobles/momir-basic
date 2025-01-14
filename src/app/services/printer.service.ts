@@ -69,7 +69,7 @@ export class PrinterService {
 
       const encoder = new TextEncoder();
       const resetCommand = [0x1B, 0x40]; // Reset de la impresora
-      const textData = encoder.encode(text + '\n\n');
+      const textData = encoder.encode(text )//+ '\n\n');
       const cutCommand = [0x1D, 0x56, 0x00]; // Cortar papel
       const command = new Uint8Array([...resetCommand, ...textData, ...cutCommand]);
 
