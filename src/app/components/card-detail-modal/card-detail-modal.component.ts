@@ -58,12 +58,20 @@ export class CardDetailModalComponent {
       const toughness = cardJson.toughness;
       const type_line = cardJson.type_line;
 
-       const text = `${name} ${manaCost}\n\n${type_line.replace(/—/g, '-')}\n\n${oracleText.replace(/—/g, '-')}\n\n${power}/${toughness}\n`;
+      const text = `${name} ${manaCost}\n\n${type_line.replace(/—/g, '-')}\n\n${oracleText.replace(/—/g, '-')}\n\n${power}/${toughness}\n`;
 
-      await this.printerService.printText(`${name} ${manaCost}\n\n`);      
-      await this.printerService.printText(`${type_line.replace(/—/g, '-')}\n\n`);      
-      await this.printerService.printText(`${oracleText.replace(/—/g, '-')}\n\n`);      
-      await this.printerService.printText(`${power}/${toughness}\n\n\n\n`);
+      await this.printerService.printText(`${name} ${manaCost}\n\n`);
+      await this.printerService.printText(`${type_line.replace(/—/g, '-')}\n\n`);
+
+      const lines = oracleText.replace(/—/g, '-').split('\n');
+      for (const line of lines) {
+        if (line.trim() !== '') {
+          await this.printerService.printText(`${line}\n`);
+        }
+      }
+
+      //await this.printerService.printText(`${oracleText.replace(/—/g, '-')}\n\n`);      
+      await this.printerService.printText(`\n${power}/${toughness}\n\n\n\n`);
 
       this.closeModal();
     } catch (error) {
