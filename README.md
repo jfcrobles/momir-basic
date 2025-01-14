@@ -13,6 +13,7 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 ## Printer Info
 
 This is the printer I used for testing.
-![Printer Example](/public/printer.jpg)
+
+<img src="/public/printer.jpg" alt="Printer Example" width="300"/>
 
 BT thermal receipt printer, 58 mm paper width, valid printing width of 48 mm, maximum printing speed of 70 mm/s, 203 dpi resolution.
