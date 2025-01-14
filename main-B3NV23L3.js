@@ -16,9 +16,10 @@ ${s}/${a}
 
 `),yield this.printerService.printText(`${c.replace(/—/g,"-")}
 
-`),yield this.printerService.printText(`${o.replace(/—/g,"-")}
-
-`),yield this.printerService.printText(`${s}/${a}
+`);let l=o.replace(/—/g,"-").split(`
+`);for(let d of l)d.trim()!==""&&(yield this.printerService.printText(`${d}
+`));yield this.printerService.printText(`
+${s}/${a}
 
 
 
