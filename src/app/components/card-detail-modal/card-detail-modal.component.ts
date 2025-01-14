@@ -49,7 +49,6 @@ export class CardDetailModalComponent {
 
   async printCardDetails(cardJson: any): Promise<void> {
     try {
-      console.log('Entra a printCardDetail');
       const name = cardJson.name;
       const cmc = cardJson.cmc;
       const manaCost = cardJson.mana_cost;

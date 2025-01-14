@@ -1,22 +1,23 @@
 <header class="header">
-    <div class="icon-container">
-      <!-- <button (click)="openConfigModal()">
+
+  <h1 class="header-title">Momir Basic</h1>
+
+  <div class="icon-container">
+    <!-- <button (click)="openConfigModal()">
         <i class="fa fa-cogs"></i>
       </button> -->
+    <button (click)="connectPrinter()" *ngIf="!loading">
+      <i class="fa fa-print"
+        [ngClass]="{'print-enabled': printerStateService.canPrint(), 'print-disabled': !printerStateService.canPrint()}"></i>
+    </button>
 
-      <button (click)="connectPrinter()" *ngIf="!loading">
-        <i class="fa fa-print" [ngClass]="{'print-enabled': printerStateService.canPrint(), 'print-disabled': !printerStateService.canPrint()}"></i>
-      </button>
-      
-      <div *ngIf="loading" class="spinner-container">
-        <i class="fa fa-spinner fa-spin"></i>
-      </div>
-
-
-      <!-- <button (click)="toggleDarkMode()">
+    <div *ngIf="loading" class="spinner-container">
+      <i class="fa fa-spinner fa-spin"></i>
+    </div>
+    <!-- <button (click)="toggleDarkMode()">
         <i class="fa" [ngClass]="darkMode ? 'fa-sun' : 'fa-moon'"></i>
       </button> -->
-    </div>
-  </header>
-  
-  <app-config-modal *ngIf="isConfigModalOpen" (close)="closeConfigModal()"></app-config-modal> 
+  </div>
+</header>
+
+<app-config-modal *ngIf="isConfigModalOpen" (close)="closeConfigModal()"></app-config-modal>

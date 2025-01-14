@@ -14,6 +14,7 @@ export class PrinterService {
         optionalServices: [
           '49535343-fe7d-4ae5-8fa9-9fafd205e455', // Service UUID
           '000018f0-0000-1000-8000-00805f9b34fb',  // Another service UUID
+          '0000ae30-0000-1000-8000-00805f9b34fb',
           'device_information'
         ]
 
